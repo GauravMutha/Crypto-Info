@@ -6,6 +6,7 @@ import Loader from './Loader';
 import ExchangeCard from './ExchangeCard';
 import ErrorComponent from './ErrorComponent';
 
+
 const Exchanges = () => {
   const [exchangesArr,setExchangesArr]=useState([]);
   const [loading,setLoading]=useState(true);
@@ -13,7 +14,7 @@ const Exchanges = () => {
   useEffect(() => {
     const fetchExchanges=async()=>{
       try {
-        const response=await axios.get(`${server}/exchangessss`);
+        const response=await axios.get(`${server}/exchanges`);
         const data = response.data;
         setExchangesArr(data);
         setLoading(false);
