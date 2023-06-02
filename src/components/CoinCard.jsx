@@ -6,7 +6,7 @@ import { VStack , Image , Heading ,Text, HStack } from '@chakra-ui/react'
 const CoinCard = ({id,name,img,symbol,price,currencySymbol='₹'}) => {
     return (
         <>
-            <Link to={'/coin/${id}'}>
+            <Link to={`/coin/${id}`}>
                 <VStack w={'52'} shadow={'lg'} p={'8'} borderRadius={'lg'} transition={'all 0.3s'}
                     m={'4'}
                     css={{

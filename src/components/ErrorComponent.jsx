@@ -7,7 +7,7 @@ const ErrorComponent = ({message}) => {
     position={'fixed'}
     bottom={'4'}
     left={'50%'}
-    transform={'translate(-50%'}
+    transform={'translateX(-50%)'}
     w={'container.lg'}
     >
       {message}

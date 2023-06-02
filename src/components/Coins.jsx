@@ -26,8 +26,7 @@ const Coins = () => {
   useEffect(() => {
     const fetchCoins=async()=>{
       try {
-        const response=await axios.get(`${server}/coins/markets?vs_currency=${currency}&page=${page}`);
-        const data = response.data;
+        const {data}=await axios.get(`${server}/coins/markets?vs_currency=${currency}&page=${page}`);
         setCoinsArr(data);
         setLoading(false);
       } catch (error) {
@@ -38,7 +37,9 @@ const Coins = () => {
     fetchCoins ();
   }, [currency,page])
 
-  if(error) return <ErrorComponent message={'Server error in fetching the data'}/>
+  if(error){
+    return <ErrorComponent message={'Server error in fetching the data'}/>
+  }
 
   return (
     <Container maxWidth={'container.xl'}>
